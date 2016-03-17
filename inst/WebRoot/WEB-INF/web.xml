@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>Inst</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<!-- 配置Spring的用于初始化容器对象的监听器 -->
+
+	<listener>
+
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+
+	</listener>
+
+	<context-param>
+
+		<param-name>contextConfigLocation</param-name>
+
+		<!-- 注意我的applicationContext.xml 和下面的springmvc的配置文件都是放在src下的 -->
+
+		<param-value>classpath*:spring/*.xml</param-value>
+
+	</context-param>
+
+	<filter>    
+	    <filter-name>Character Encoding</filter-name>    
+	    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>    
+	    <init-param>    
+	        <param-name>encoding</param-name>    
+	        <param-value>UTF-8</param-value>    
+	    </init-param>    
+	</filter>    
+	<filter-mapping>    
+	    <filter-name>Character Encoding</filter-name>    
+	    <url-pattern>/*</url-pattern>    
+	</filter-mapping>
+	<filter>    
+	    <filter-name>PageFilter</filter-name>    
+	    <filter-class>cn.simpleray.base.core.PageFilter</filter-class>    
+	    <init-param>    
+	        <param-name>encoding</param-name>    
+	        <param-value>UTF-8</param-value>    
+	    </init-param>    
+	</filter>    
+	<filter-mapping>    
+	    <filter-name>PageFilter</filter-name>    
+	    <url-pattern>/*</url-pattern>    
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>inst</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inst</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
+		<init-param>
+			<param-name>XMLConfig</param-name>
+			<param-value>/WEB-INF/config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<url-pattern>
+			/resources/editor/ckfinder/core/connector/java/connector.java
+		</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>FileUploadFilter</filter-name>
+		<filter-class>com.ckfinder.connector.FileUploadFilter</filter-class>
+                <init-param>
+                    <param-name>sessionCookieName</param-name>
+                    <param-value>JSESSIONID</param-value>
+                </init-param>
+                <init-param>
+                    <param-name>sessionParameterName</param-name>
+                    <param-value>jsessionid</param-value>
+                </init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>FileUploadFilter</filter-name>
+		<url-pattern>
+			/resources/editor/ckfinder/core/connector/java/connector.java
+     	 </url-pattern>
+	</filter-mapping>
+
+	<!-- session超时定义,单位为分钟 -->
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+
+	<!-- 当访问的页面不存在时跳转的提示页面 
+	<error-page>
+		<error-code>404</error-code>
+		<location>/html/common/404.htm</location>
+	</error-page>
+	-->
+</web-app>

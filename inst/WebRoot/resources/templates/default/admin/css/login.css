@@ -1,0 +1,28 @@
+@CHARSET 'UTF-8';
+
+body {
+	font-size: 12px;
+	line-height: 18px;
+
+	margin: 0px;
+
+	word-break: break-all;
+
+	background-color: #95d1ff;
+}
+table td {
+	border-collapse: collapse;
+		margin: 0px;
+}
+
+td {
+	color: #416178;
+}
+
+.btn {
+	width: 50px;
+	height: 34px;
+
+	border: 0;
+	background-color: #95d1ff;
+}

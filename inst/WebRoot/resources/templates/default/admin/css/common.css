@@ -1,0 +1,167 @@
+@CHARSET "UTF-8";
+
+body, div, table, td {
+	margin: 0px;
+	padding: 0px;
+}
+
+body, table, td, p, option, select, input, li {
+	font-size: 12px;
+	line-height: 20px;
+
+	color: #000;
+}
+
+img {
+	border:0px;
+}
+
+table {
+	border-collapse: collapse;
+
+	border: 0;
+}
+
+frameset {
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.STYLE3 {
+	font-size: 14px;
+	font-weight: bold;
+
+	color: #fff;
+}
+
+/* admin header */
+.header .welcome {
+	color: #c3e0f0;
+}
+
+/* list-body */
+.list-body {
+	background-color: #0a5c8e;
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+
+	color: #000;
+}
+
+a:link {
+	color: #000;
+}
+
+a:hover {
+	color: #f66;
+}
+.menu, .menu-collapse {
+	width: 168px;
+}
+
+.sub-menu {
+	background-color: #f3f8fc;
+}
+.sub-menu td {
+	height: 24px;
+}
+.sub-menu div {
+	width: 130px;
+}
+
+.title {
+	font-size: 14px;
+	height: 23px;
+	cursor: hand;
+	color: #c3e0f0;
+}
+
+.menu .title {
+	background: url('../images/main_37.gif');
+}
+
+.menu-collapse .title {
+	text-align: center;
+
+	background: url('../images/main_49.gif');
+}
+
+.edit_form {
+	margin: 0px;
+}
+
+.edit_form table {
+	border: 0;
+	font-size: 14px;
+
+	cellpadding: 5;
+	cellspacing: 2;
+	align: center;
+}
+
+.edit_form table td {
+	height: 30px;
+
+	text-align: left;
+
+	background: #eef7fe;
+}
+
+.edit_form table td:FIRST-CHILD {
+	text-align: center;
+}
+
+/* view */
+.view-form table{
+	align: center;
+	width: 100%;
+}
+
+.edit-form table{
+	align: center;
+	width: 100%;
+}
+
+.form-info{
+	background: url('../images/main_58.gif');
+}
+
+.form-info .form-info-img {
+	background: url('../images/main_53.gif') no-repeat;
+	width:28px;
+	height:24px;
+}
+
+.form-info .form-info-text {
+	font-size: 14px;
+	font-weight: bold;
+
+	color: #fff;
+}
+
+.view-form .form-table-title {
+	height: 30px;
+	text-align:center;
+	background-color: #D1E9FC;
+	font-weight: bold;
+}
+
+.view-form .form-table-body {
+	height: 30px;
+	text-align:center;
+	background-color: #eef7fe;
+}
+
+
+/*s_fanye*/
+.s_fanye, .tool-bar {
+  	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	width: 100%;
+}
